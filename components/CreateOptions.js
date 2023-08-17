@@ -25,14 +25,6 @@ const CreateOptions = ({ navigation, setOpenCreateOptions }) => {
   const lingo = language === "tr" ? turkish : english;
 
   const goGame = () => {
-    for (let i = 0; i < (checked === "easy" ? 5 : checked === "normal" ? 10 : 15); i++) {
-      const row = [];
-      for (let j = 0; j < (checked === "easy" ? 5 : checked === "normal" ? 10 : 15); j++) {
-        const randomValue = Math.floor(Math.random() * 4); // 0, 1, 2, 3
-        row.push(randomValue);
-      }
-      matrix.push(row);
-    }
     setOpenCreateOptions(false);
     navigation.navigate("Game", { mode: checked })
   }

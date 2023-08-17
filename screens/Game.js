@@ -13,6 +13,10 @@ export const Game = ({ navigation, mode }) => {
   const viewRef = useRef();
 
   useEffect(() => {
+    console.log(mode)
+  }, [])
+
+  useEffect(() => {
     if (download === true) {
       Saving({ viewRef });
       setDownload(false);

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Dimensions, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
 import ViewShot from 'react-native-view-shot';
 import { useTheme } from '../utils/ThemeProvider';
@@ -11,6 +11,10 @@ const Render = ({ viewRef, mode }) => {
 
   const { isDarkMode } = useTheme();
   const theme = isDarkMode === "true" ? darkColors : lightColors;
+
+  useEffect(() => {
+    console.log(mode)
+  }, [])
 
   const renderCell = (row, col, text) => {
     return (
